@@ -1,0 +1,134 @@
+.card-palestra {
+  flex: 1;
+  height: 500px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+  &:active{
+    transform: translateY(0);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card-body {
+  flex: initial;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.TextoTag {
+  display: inline-block;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80px;
+  min-height: 20px;
+  position: relative;
+
+  background: #171717;
+  border-radius: 15px;
+  padding: 2px;
+  margin-bottom: 4px;
+  margin-right: 5px;
+}
+
+.divTituloP {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: auto;
+  min-height: auto;
+
+
+  background: #19243F;
+  border-radius: 10px;
+}
+
+.divTituloPinferior {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 6px 12px;
+  gap: 8px;
+  width: 262px;
+  min-height: 44px;
+
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #212529;
+}
+
+.TituloP {
+  width: auto;
+  height: auto;
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.TituloPinferior {
+  width: auto;
+  height: auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #212529;
+  ;
+  margin-bottom: 0;
+}
+
+.Link {
+  text-decoration: none;
+}
+
+.textInfoP {
+  justify-content: left;
+  font-size: 20px;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardP {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 0px;
+
+  width: 306px;
+  height: 300px;
+
+  background: #FFFFFF;
+  border-radius: 4px;
+}
