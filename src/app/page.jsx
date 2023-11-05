@@ -1,5 +1,6 @@
 'use client'
 
+import CardRestaurante from "@/components/CardRestaurante"
 import Container from "@/components/Container"
 import { useEffect, useState } from "react"
 
@@ -41,7 +42,7 @@ export default function Home() {
       <div className="px-5 flex gap-8 justify-center items-center ">
         {categorias.map((categoria) => (
             <div key={categoria.id} className="">
-              <Container name={categoria.nome} subinfo={categoria.subinfo} />
+              <CardRestaurante/>
             </div>
           ))}
       </div>
