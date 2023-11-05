@@ -12,7 +12,7 @@ export default function NavBar() {
         <Container className="gap-4">
           <div className="d-flex align-items-center">
             <a href="/" className="Link" >
-              <img className="img-logotipo" src="/images/LogoCiclo.png" style={{height: 48}}/>
+              <img className="img-logotipo" src="/images/LogoPNGPreto.png"/>
             </a>
           </div>
 
