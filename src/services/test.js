@@ -4,7 +4,7 @@ async function testGetAllRestaurants() {
   try {
     const restaurants = await eatsyService.getAllRestaurants();
     if (restaurants) {
-      console.log("Restaurantes:", restaurants[3]);
+      console.log("Restaurantes:", restaurants);
     } else {
       console.log("Erro ao buscar restaurantes.");
     }
@@ -39,6 +39,20 @@ async function testGetRestaurantById() {
   }
 }
 
-testGetRestaurantById();
-testGetAllRestaurants();
-testGetAllUsers();
+async function testGetAllCategories() {
+  try {
+    const categorias = await eatsyService.getAllCategories();
+    if (categorias) {
+      console.log("Categorias:", categorias);
+    } else {
+      console.log("Erro ao buscar categorias.");
+    }
+  } catch (error) {
+    console.error("Erro inesperado:", error);
+  }
+}
+
+testGetRestaurantById(5);
+//testGetAllRestaurants();
+//testGetAllUsers();
+//testGetAllCategories();

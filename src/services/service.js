@@ -18,7 +18,7 @@ const eatsyService = {
   async getAllRestaurants() {
     let { data: Restaurante, error } = await supabase
       .from('Restaurante')
-      .select('*, Avaliacao(nota),Foto(imagem)')
+      .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
 
     if (error) {
       console.error("Erro ao buscar dados do Supabase:", error);
@@ -27,8 +27,20 @@ const eatsyService = {
     return averageCalculator(Restaurante);
   },
 
+  async getAllCategories() {
+    let { data: Categories, error } = await supabase
+      .from('Categoria')
+      .select('*')
+
+    if (error) {
+      console.error("Erro ao buscar dados do Supabase:", error);
+      return null;
+    }
+    return Categories;
+  },
+
   async getAllUsers() {
-    let { data: Usuario, error } = await supabase
+    let { data: Usuarios, error } = await supabase
       .from('Usuario')
       .select('*')
 
@@ -36,14 +48,13 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    console.log(Usuario)
-    return Usuario;
+    return Usuarios;
   },
 
   async getRestaurantById(id) {
     let { data: Restaurante, error } = await supabase
       .from('Restaurante')
-      .select('*, Avaliacao(comentario,nota,Usuario(*)),Foto(imagem)')
+      .select('*, Avaliacao(comentario,nota,Usuario(*)),Foto(imagem),Categoria(nome)')
       .eq('id_restaurante', id)
 
     if (error) {
