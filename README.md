@@ -1,10 +1,10 @@
-# Projeto "Eatsy" - Guia Gastronômico Online
+# Projeto Eatsy - Guia Gastronômico Online
 
-Bem-vindo ao repositório do projeto "NomNom", um guia gastronômico online desenvolvido para proporcionar aos usuários uma experiência única ao explorar restaurantes e avaliações culinárias.
+Bem-vindo ao repositório do projeto Eatsy, um guia gastronômico online desenvolvido para proporcionar aos usuários uma experiência única ao explorar restaurantes e avaliações culinárias.
 
 ## Visão Geral
 
-O "Eatsy" é uma aplicação web construída com Next.js e utiliza o Supabase como banco de dados. A proposta do projeto é oferecer aos usuários a capacidade de descobrir restaurantes, visualizar avaliações, e compartilhar suas próprias experiências culinárias. A plataforma é uma versão personalizada de um site de avaliações de restaurantes, semelhante ao TripAdvisor.
+O Eatsy é uma aplicação web construída com Next.js e utiliza o Supabase como banco de dados. A proposta do projeto é oferecer aos usuários a capacidade de descobrir restaurantes, visualizar avaliações, e compartilhar suas próprias experiências culinárias. A plataforma é uma versão personalizada de um site de avaliações de restaurantes, semelhante ao TripAdvisor.
 
 ## Funcionalidades Principais
 
