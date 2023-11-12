@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.scss'
 import NavBar from '@/components/NavBar'
+import Rodape from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} min-h-screen h-screen`}>
         <NavBar />
         {children}
+        <Rodape />
       </body>
     </html>
   )
