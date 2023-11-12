@@ -52,7 +52,7 @@ async function testGetAllCategories() {
   }
 }
 
-testGetRestaurantById(5);
+//testGetRestaurantById(5);
 //testGetAllRestaurants();
 //testGetAllUsers();
 //testGetAllCategories();
