@@ -4,7 +4,7 @@ async function testGetAllRestaurants() {
   try {
     const restaurants = await eatsyService.getAllRestaurants();
     if (restaurants) {
-      console.log("Restaurantes:", restaurants);
+      console.log("Restaurantes:", restaurants[5]);
     } else {
       console.log("Erro ao buscar restaurantes.");
     }
@@ -28,11 +28,37 @@ async function testGetAllUsers() {
 
 async function testGetRestaurantById() {
   try {
-    const restaurant = await eatsyService.getRestaurantById(4);
+    const restaurant = await eatsyService.getRestaurantById(5);
     if (restaurant) {
       console.log("Restaurante:", restaurant[0]);
     } else {
       console.log("Erro ao buscar restaurantes.");
+    }
+  } catch (error) {
+    console.error("Erro inesperado:", error);
+  }
+}
+
+async function testGetRestaurantByCategory() {
+  try {
+    const restaurant = await eatsyService.getRestaurantsByCategory(1);
+    if (restaurant) {
+      console.log("Restaurantes:", restaurant);
+    } else {
+      console.log("Erro ao buscar restaurantes.");
+    }
+  } catch (error) {
+    console.error("Erro inesperado:", error);
+  }
+}
+
+async function testsearchRestaurantsByName() {
+  try {
+    const restaurant = await eatsyService.searchRestaurantsByName('Pizza');
+    if (restaurant) {
+      console.log("Restaurante:", restaurant);
+    } else {
+      console.log("Erro ao buscar restaurante.");
     }
   } catch (error) {
     console.error("Erro inesperado:", error);
@@ -52,7 +78,9 @@ async function testGetAllCategories() {
   }
 }
 
-//testGetRestaurantById(5);
+testGetRestaurantById();
 //testGetAllRestaurants();
 //testGetAllUsers();
 //testGetAllCategories();
+//testGetRestaurantByCategory();
+//testsearchRestaurantsByName();
