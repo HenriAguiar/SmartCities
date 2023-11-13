@@ -34,20 +34,18 @@ export default function Home() {
     setCategorias(Categorias)
   },[])
   return (
-    //criar container geral
-    <main className='flex flex-col h-[50vh]'>
+    <div className='container'>
       <div className='flex items-center justify-center w-full py-10' >
-        <h1 className='font-bold text-3xl'>Categorias Populares</h1>
+        <h1 className='font-bold text-3xl'>Recomendados</h1>
       </div>
 
-      <div className="px-5 flex gap-8 justify-center items-center ">
+      <div className="row row-cols-4 justify-center items-center">
         {categorias.map((categoria) => (
             <div key={categoria.id} className="">
-              /*transformar card em col */
               <CardRestaurante/>
             </div>
           ))}
       </div>
-    </main>
+    </div>
   )
 }
