@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Eatsy - Guia Gastronômico Online
 
-## Getting Started
+Bem-vindo ao repositório do projeto Eatsy, um guia gastronômico online desenvolvido para proporcionar aos usuários uma experiência única ao explorar restaurantes e avaliações culinárias.
 
-First, run the development server:
+## Visão Geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O Eatsy é uma aplicação web construída com Next.js e utiliza o Supabase como banco de dados. A proposta do projeto é oferecer aos usuários a capacidade de descobrir restaurantes, visualizar avaliações, e compartilhar suas próprias experiências culinárias. A plataforma é uma versão personalizada de um site de avaliações de restaurantes, semelhante ao TripAdvisor.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades Principais
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Busca de Restaurantes:** Os usuários podem pesquisar por restaurantes com base em diferentes critérios, como nome, localização ou tipo de culinária.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Avaliações e Comentários:** Os usuários podem visualizar e deixar avaliações sobre os restaurantes. Cada restaurante exibe uma média de avaliação calculada a partir das notas dos usuários.
 
-## Learn More
+- **Exploração de Categorias:** Os restaurantes são categorizados por tipo de culinária, facilitando a navegação para os amantes de uma culinária específica.
 
-To learn more about Next.js, take a look at the following resources:
+## Configuração do Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Soon...
