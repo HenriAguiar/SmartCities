@@ -1,17 +1,18 @@
 const supabase = require("./client");
 
-function averageCalculator(restaurantes) {
-  const restaurantesComMedia = restaurantes.map((restaurante) => {
+function averageCalculator(restaurants) {
+  const restaurantesComMedia = restaurants.map((restaurante) => {
     if (restaurante.Avaliacao.length > 0) {
       const notas = restaurante.Avaliacao.map((avaliacao) => avaliacao.nota);
       const media = notas.reduce((total, nota) => total + nota, 0) / notas.length;
-      return { ...restaurante, mediaNotas: media };
+      const mediaArredondada = parseFloat(media.toFixed(1));
+      return { ...restaurante, mediaNotas: mediaArredondada };
     } else {
       return { ...restaurante, mediaNotas: null };
     }
   });
   return restaurantesComMedia;
-};
+}
 
 const eatsyService = {
 
@@ -64,6 +65,24 @@ const eatsyService = {
       return null;
     }
     return Restaurantes;
+  },
+
+  async getTopRatedRestaurants() {
+    let { data: Restaurantes, error } = await supabase
+      .from('Restaurante')
+      .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
+
+    if (error) {
+      console.error("Erro ao buscar dados do Supabase:", error);
+      return null;
+    }
+    const restaurantesComMedia = averageCalculator(Restaurantes);
+  
+    const restaurantesOrdenados = restaurantesComMedia.sort((a, b) => b.mediaNotas - a.mediaNotas);
+  
+    const top4Restaurantes = restaurantesOrdenados.slice(0, 4);
+
+    return top4Restaurantes;
   },
   
   async getAllCategories() {
