@@ -91,10 +91,24 @@ async function testGetAllCategories() {
   }
 }
 
+async function testGetRecommendedRestaurants() {
+  try {
+    const restaurant = await eatsyService.getRecommendedRestaurants();
+    if (restaurant) {
+      console.log("Restaurante:", restaurant);
+    } else {
+      console.log("Erro ao buscar restaurante.");
+    }
+  } catch (error) {
+    console.error("Erro inesperado:", error);
+  }
+}
+
 //testGetRestaurantById();
 //testGetAllRestaurants();
 //testGetAllUsers();
 //testGetAllCategories();
 //testGetRestaurantByCategory();
 //testsearchRestaurantsByName();
-testGetTopRatedRestaurants()
+//testGetTopRatedRestaurants()
+testGetRecommendedRestaurants()

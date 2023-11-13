@@ -17,7 +17,7 @@ function averageCalculator(restaurants) {
 const eatsyService = {
 
   async getAllRestaurants() {
-    let { data: Restaurantes, error } = await supabase
+    let { data: restaurantes, error } = await supabase
       .from('Restaurante')
       .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
 
@@ -25,11 +25,11 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    return averageCalculator(Restaurantes);
+    return averageCalculator(restaurantes);
   },
 
   async getRestaurantById(id) {
-    let { data: Restaurante, error } = await supabase
+    let { data: restaurante, error } = await supabase
       .from('Restaurante')
       .select('*, Avaliacao(comentario,nota,Usuario(*)),Foto(imagem),Categoria(nome)')
       .eq('id_restaurante', id)
@@ -38,11 +38,11 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    return averageCalculator(Restaurante);
+    return averageCalculator(restaurante);
   },
 
   async getRestaurantsByCategory(categoryId) {
-    let { data: Restaurantes, error } = await supabase
+    let { data: restaurantes, error } = await supabase
       .from('Restaurante')
       .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
       .eq('categoria', categoryId)
@@ -51,11 +51,11 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    return averageCalculator(Restaurantes);
+    return averageCalculator(restaurantes);
   },
 
   async searchRestaurantsByName(search) {
-    let { data: Restaurantes, error } = await supabase
+    let { data: restaurantes, error } = await supabase
       .from('Restaurante')
       .select('id_restaurante,nome,Foto(imagem)')
       .ilike('nome', `%${search}%`);
@@ -64,11 +64,11 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    return Restaurantes;
+    return restaurantes;
   },
 
   async getTopRatedRestaurants() {
-    let { data: Restaurantes, error } = await supabase
+    let { data: restaurantes, error } = await supabase
       .from('Restaurante')
       .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
 
@@ -76,13 +76,30 @@ const eatsyService = {
       console.error("Erro ao buscar dados do Supabase:", error);
       return null;
     }
-    const restaurantesComMedia = averageCalculator(Restaurantes);
+    const restaurantesComMedia = averageCalculator(restaurantes);
   
     const restaurantesOrdenados = restaurantesComMedia.sort((a, b) => b.mediaNotas - a.mediaNotas);
   
     const top4Restaurantes = restaurantesOrdenados.slice(0, 4);
 
     return top4Restaurantes;
+  },
+
+  async getRecommendedRestaurants() {
+    let { data: restaurantes, error } = await supabase
+      .from('Restaurante')
+      .select('*, Avaliacao(nota),Foto(imagem),Categoria(nome)')
+  
+    if (error) {
+      console.error("Erro ao buscar dados do Supabase:", error);
+      return null;
+    }
+
+      const restaurantesEmbaralhados = restaurantes.sort(() => Math.random() - 0.5);
+
+      const recomendados = restaurantesEmbaralhados.slice(0, 8);
+
+      return averageCalculator(recomendados);
   },
   
   async getAllCategories() {
