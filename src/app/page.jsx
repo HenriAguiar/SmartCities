@@ -45,6 +45,19 @@ export default function Home() {
             </div>
           ))}
       </div>
+
+      <div className='container'>
+        <div className='flex items-center justify-center w-full py-10'>
+          <h1 className='font-bold text-3xl'>Restaurante em Destaque</h1>
+        </div>
+        <div className="row justify-center items-center">
+          {categorias.map((categoria) => (
+          <div key={categoria.id} className="col-12 col-md-6 col-lg-3 mb-4">
+            <CardRestaurante />
+          </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
