@@ -14,9 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body className={`${inter.className} min-h-screen h-screen`}>
-        <NavBar />
-        {children}
-        <Rodape />
+        <header>
+          <NavBar />
+        </header>
+        <main>
+          {children}
+        </main>
+        <footer>
+          <Rodape />
+        </footer>
       </body>
     </html>
   )

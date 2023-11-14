@@ -1,7 +1,6 @@
 'use client'
 
 import CardRestaurante from "@/components/CardRestaurante"
-import Container from "@/components/Container"
 import { useEffect, useState } from "react"
 
 const Categorias = [{
@@ -34,7 +33,7 @@ export default function Home() {
     setCategorias(Categorias)
   },[])
   return (
-    <div className='container'>
+    <div className='container pb-5'>
       <div className='flex items-center justify-center w-full py-10' >
         <h1 className='font-bold text-3xl'>Recomendados</h1>
       </div>
