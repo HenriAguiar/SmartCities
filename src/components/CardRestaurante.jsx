@@ -4,7 +4,7 @@ export default function CardRestaurante() {
     return (
         <>
             <div className="col">
-                <a href={``} className="Link">
+                <a href='/detalhes' className="Link">
                     <div className="card card-palestra">
                         <div className="container h-100 pb-3 pt-3">
                             <div className="ratio ratio-4x3">
