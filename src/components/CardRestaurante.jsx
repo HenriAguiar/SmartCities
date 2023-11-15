@@ -13,7 +13,7 @@ export default function CardRestaurante() {
                             <div className="card-body d-flex align-items-center justify-items-center">
                                 <div className="row row-cols-1">
                                     <div className="col">
-                                        <div className="d-flex fw-bold fs-4 align-items-center pb-2">Nome do restaurante</div>
+                                        <div className="d-flex fw-bold fs-5 align-items-center pb-2">Nome do restaurante</div>
                                     </div>
                                     <div className="col">
                                         <div className="d-flex justify-content-start">
