@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function CardRestaurante() {
+export default function CardRestaurante({ imgUrl,nome,avaliacao}) {
     return (
         <>
             <div className="col">
@@ -8,12 +8,12 @@ export default function CardRestaurante() {
                     <div className="card card-palestra">
                         <div className="container h-100 pb-3 pt-3">
                             <div className="ratio ratio-4x3">
-                                <img src="/images/imagemRestaurante.png" className=""></img>
+                                <img src={imgUrl} className=""></img>
                             </div>
                             <div className="card-body d-flex align-items-center justify-items-center">
                                 <div className="row row-cols-1">
                                     <div className="col">
-                                        <div className="d-flex fw-bold fs-5 align-items-center pb-2">Nome do restaurante</div>
+                                        <div className="d-flex fw-bold fs-5 align-items-center pb-2">{nome}</div>
                                     </div>
                                     <div className="col">
                                         <div className="d-flex justify-content-start">
@@ -44,7 +44,7 @@ export default function CardRestaurante() {
                                         </svg>
                                     </div>
                                     <div className="col col-3 d-flex align-items-center">
-                                        4.5
+                                        {avaliacao}
                                     </div>
                                 </div>
                             </div>

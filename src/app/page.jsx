@@ -2,40 +2,35 @@
 
 import CardRestaurante from "@/components/CardRestaurante"
 import { useEffect, useState } from "react"
-
-const Categorias = [{
-  id: 1,
-  nome: 'Principal',
-  subinfo: 'Teste'
-}, {
-  id: 2,
-  nome: 'Lanche',
-  subinfo: 'Teste'
-}, {
-  id: 3,
-  nome: 'Sobremesa',
-  subinfo: 'Teste'
-}, {
-  id: 4,
-  nome: 'Todos',
-  subinfo: 'Teste'
-}, {
-  id: 5,
-  nome: 'Todos',
-  subinfo: 'Teste'
-},]
-
-
-
-
+import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/services/service"
 
 export default function Home() {
 
-  const [categorias, setCategorias] = useState([])
+  const [recommendedRestaurants, setRecommendedRestaurants] = useState([]);
+  const [topRatedRestaurants, setTopRatedRestaurants] = useState([]);
 
   useEffect(() => {
-    setCategorias(Categorias)
-  }, [])
+    async function fetchRecommendedRestaurants() {
+      try {
+        const restaurants = await getRecommendedRestaurants();
+        setRecommendedRestaurants(restaurants);
+      } catch (error) {
+        console.error("Erro ao obter restaurantes recomendados:", error);
+      }
+    }
+    async function fetchTopRatedRestaurants() {
+      try {
+        const restaurants = await getTopRatedRestaurants();
+        setTopRatedRestaurants(restaurants);
+      } catch (error) {
+        console.error("Erro ao obter restaurantes recomendados:", error);
+      }
+    }
+
+    fetchRecommendedRestaurants();
+    fetchTopRatedRestaurants();
+  }, []);
+
   return (
     <>
       <div>
@@ -45,9 +40,9 @@ export default function Home() {
           </div>
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 gy-4 justify-center items-center">
-            {categorias.map((categoria) => (
-              <div key={categoria.id} className="">
-                <CardRestaurante />
+            {recommendedRestaurants.map((restaurante) => (
+              <div key={restaurante.id_restaurante} className="">
+                <CardRestaurante imgUrl={restaurante.Foto[0].imagem} avaliacao={restaurante.mediaNotas} nome={restaurante.nome} />
               </div>
             ))}
           </div>
@@ -56,12 +51,12 @@ export default function Home() {
       <div>
         <div className='container'>
           <div className='flex items-center justify-center w-full py-10'>
-            <h1 className='font-bold text-3xl'>Restaurante em Destaque</h1>
+            <h1 className='font-bold text-3xl'>Restaurantes em Destaque</h1>
           </div>
           <div className="row justify-center items-center">
-            {categorias.map((categoria) => (
-              <div key={categoria.id} className="col-12 col-md-6 col-lg-3 mb-4">
-                <CardRestaurante />
+            {topRatedRestaurants.map((restaurante) => (
+              <div key={restaurante.id_restaurante} className="col-12 col-md-6 col-lg-3 mb-4">
+                <CardRestaurante imgUrl={restaurante.Foto[0].imagem} avaliacao={restaurante.mediaNotas} nome={restaurante.nome}/>
               </div>
             ))}
           </div>
