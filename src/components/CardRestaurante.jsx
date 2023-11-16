@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function CardRestaurante({ imgUrl,nome,avaliacao}) {
+export default function CardRestaurante({ imgUrl,nome,avaliacao,id}) {
     return (
         <>
             <div className="col">
