@@ -39,7 +39,7 @@ export default function Home() {
             <h1 className='font-bold text-3xl'>Recomendados</h1>
           </div>
 
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 gy-4 justify-center items-center">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-4 justify-center items-center">
             {recommendedRestaurants.map((restaurante) => (
               <div key={restaurante.id_restaurante} className="">
                 <CardRestaurante imgUrl={restaurante.Foto[0].imagem} avaliacao={restaurante.mediaNotas} nome={restaurante.nome} id={restaurante.id_restaurante} />
