@@ -3,7 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 export default function Rodape() {
     return (
         <>
-            <div className="rodape bg-green-300">
+            <div className="rodape">
                 <div className="container">
                     <div className="row align-items-center logoSite">
                         <div className=" col-md-12 col-lg-3 imagemCentro mb-md-2">
@@ -13,15 +13,8 @@ export default function Rodape() {
                                 style={{ height: "8rem" }}
                             />
                         </div>
-                        <div className=" col-md-12 col-lg-3 mb-sm-5 mb-md-0">
+                        <div className=" col-md-12 col-lg-6 mb-sm-5 mb-md-0">
                             <h4 className="tituloRodape">Links úteis</h4>
-                        </div>
-                        <div className=" col-md-12 col-lg-3 logoSite imagemCentro mb-md-2">
-                            <img
-                                src="/images/LogoPNGBranco.png"
-                                alt="Logo Branco"
-                                style={{ height: "8rem" }}
-                            />
                         </div>
                         <div className=" col-md-12 col-lg-3 mb-sm-5 mb-md-0">
                             <h4 className="tituloRodape">Redes Sociais</h4>
