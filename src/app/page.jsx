@@ -4,32 +4,10 @@ import CardRestaurante from "@/components/CardRestaurante"
 import { useEffect, useState } from "react"
 import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/services/service"
 
-export default function Home() {
+export default async function Home() {
 
-  const [recommendedRestaurants, setRecommendedRestaurants] = useState([]);
-  const [topRatedRestaurants, setTopRatedRestaurants] = useState([]);
-
-  useEffect(() => {
-    async function fetchRecommendedRestaurants() {
-      try {
-        const restaurants = await getRecommendedRestaurants();
-        setRecommendedRestaurants(restaurants);
-      } catch (error) {
-        console.error("Erro ao obter restaurantes recomendados:", error);
-      }
-    }
-    async function fetchTopRatedRestaurants() {
-      try {
-        const restaurants = await getTopRatedRestaurants();
-        setTopRatedRestaurants(restaurants);
-      } catch (error) {
-        console.error("Erro ao obter restaurantes recomendados:", error);
-      }
-    }
-
-    fetchRecommendedRestaurants();
-    fetchTopRatedRestaurants();
-  }, []);
+  const recommendedRestaurants = await getRecommendedRestaurants();
+  const topRatedRestaurants = await getTopRatedRestaurants();
 
   return (
     <>

@@ -1,6 +1,3 @@
-import React from 'react';
-import { InstagramOutlined, PhoneOutlined } from '@ant-design/icons';
-import { Space } from 'antd';
 
 const HorariosFuncionamento = ({ horarios }) => {
     const horariosArray = Object.entries(horarios);
@@ -50,8 +47,6 @@ export default function Detalhes() {
                 />
                 <p style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '24px', fontWeight: 'bold' }}>
                     Nome do Restaurante{' '}
-                    <PhoneOutlined style={{ fontSize: '20px', marginLeft: '5px' }} />
-                    <InstagramOutlined style={{ fontSize: '20px', marginLeft: '5px' }} />
                 </p>
             </div>
 
