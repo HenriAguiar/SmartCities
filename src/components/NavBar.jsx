@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 export default function NavBar() {
   return (
     <>
-      <Navbar className="bg-green-300 posicao-navbar" variant="dark" expand="lg">
+      <Navbar className="posicao-navbar" variant="dark" expand="lg">
         <Container className="gap-4">
           <div className="d-flex align-items-center">
             <a href="/" className="Link" >
