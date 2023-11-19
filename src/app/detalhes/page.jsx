@@ -1,7 +1,3 @@
-import React from 'react';
-import { InstagramOutlined, PhoneOutlined } from '@ant-design/icons';
-import { Space } from 'antd';
-import './Coment.scss';
 
 const HorariosFuncionamento = ({ horarios }) => {
   const horariosArray = Object.entries(horarios);
@@ -29,7 +25,7 @@ const HorariosFuncionamento = ({ horarios }) => {
   );
 };
 
-const Detalhes = () => {
+export default function Detalhes() {
   const horariosRestaurante = {
     domingo: '10:00–20:00',
     sábado: '10:00–22:00',
@@ -58,8 +54,6 @@ const Detalhes = () => {
         </div>
         <p className="restaurant-name" style={{ fontSize: `${tamanhoNomeRestaurante}px`, fontFamily: 'Playfair Display, serif', fontWeight: 'regular', textAlign: 'center' }}>
           BURGER KING{' '}
-          <PhoneOutlined className="icon" style={{ fontSize: `${tamanhoNomeRestaurante}px`, verticalAlign: 'middle' }} />
-          <InstagramOutlined className="icon" style={{ fontSize: `${tamanhoNomeRestaurante}px`, verticalAlign: 'middle' }} />
         </p>
       </div>
 
@@ -83,7 +77,7 @@ const Detalhes = () => {
   );
 };
 
-export default Detalhes;
+
 
 
 
