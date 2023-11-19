@@ -1,7 +1,3 @@
-import React from 'react';
-import { InstagramOutlined, PhoneOutlined } from '@ant-design/icons';
-import { Space } from 'antd';
-import './Coment.scss';
 
 const HorariosFuncionamento = ({ horarios }) => {
   const horariosArray = Object.entries(horarios);
@@ -82,8 +78,6 @@ const Detalhes = () => {
     </>
   );
 };
-
-export default Detalhes;
 
 
 
