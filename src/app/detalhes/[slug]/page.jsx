@@ -151,10 +151,10 @@ const Comentarios = () => {
   );
 };
 
-export default async function Detalhes({id}) {
+export default async function Detalhes({params}) {
   console.log('o id é:')
-  console.log(id)
-  const data = await getRestaurantById(id)
+  console.log(params)
+  const data = await getRestaurantById(params.slug)
   console.log(data)
   const horariosRestaurante = {
     domingo: '10:00–20:00',
