@@ -6,12 +6,15 @@ export default function Rodape() {
             <div className="rodape">
                 <div className="container">
                     <div className="row align-items-center logoSite">
-                        <div className=" col-md-12 col-lg-3 imagemCentro mb-md-2">
-                            <img
-                                src="/images/LogoPNGPreto.png"
-                                alt="Logo Preto"
-                                style={{ height: "8rem" }}
-                            />
+                        <div className="col-md-12 col-lg-3 mb-md-2">
+                            <div className="d-flex justify-content-start">
+                                <img className=""
+                                    src="/images/LogoPNGPreto.png"
+                                    alt="Logo Preto"
+                                    style={{ height: "8rem" }}
+                                />
+                            </div>
+
                         </div>
                         <div className=" col-md-12 col-lg-6 mb-sm-5 mb-md-0">
                             <h4 className="tituloRodape">Links úteis</h4>
@@ -25,12 +28,12 @@ export default function Rodape() {
                             <ul className="list-unstyled">
                                 <li>
                                     <h6 className="linkSemDecoracao">
-                                    Sua bússola gourmet!
+                                        Sua bússola gourmet!
                                     </h6>
                                 </li>
                                 <li>
                                     <h6 className="linkSemDecoracao">
-                                    Descubra. Deguste. Discuta.
+                                        Descubra. Deguste. Discuta.
                                     </h6>
                                 </li>
                             </ul>
