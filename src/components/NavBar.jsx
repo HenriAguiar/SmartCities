@@ -20,9 +20,9 @@ export default function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ">
               <Nav.Link className='link' href="/">Home</Nav.Link>
-              <Nav.Link className='link' href={'#recomendados'}>Recomendados</Nav.Link>
-              <Nav.Link className='link' href={'#sobre'}>Sobre</Nav.Link>
-              <Nav.Link className='link' href={'#destaque'}>Destaque</Nav.Link>
+              <Nav.Link className='link' href={'/#recomendados'}>Recomendados</Nav.Link>
+              <Nav.Link className='link' href={'/#sobre'}>Sobre</Nav.Link>
+              <Nav.Link className='link' href={'/#destaque'}>Destaque</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
