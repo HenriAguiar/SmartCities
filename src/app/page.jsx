@@ -1,5 +1,6 @@
 
 import CardRestaurante from "@/components/CardRestaurante"
+import FaixaInfo from "@/components/FaixaInfo";
 import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/lib/services/service"
 
 export default async function Home() {
@@ -7,19 +8,19 @@ export default async function Home() {
   const recommendedRestaurants = await getRecommendedRestaurants();
   const topRatedRestaurants = await getTopRatedRestaurants();
   console.log()
-  recommendedRestaurants.map((restaurante)=>(console.log(restaurante.id_restaurante)))
+  recommendedRestaurants.map((restaurante) => (console.log(restaurante.id_restaurante)))
   return (
     <>
       <div>
         <div className='container pb-5'>
-          <div className='d-flex align-items-center justify-content-center w-full p-5' >
+          <div id="recomendados" className='d-flex align-items-center justify-content-center w-full p-5' >
             <h1 className='font-bold text-3xl text-center'>Recomendados</h1>
           </div>
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-4 justify-content-center">
             {recommendedRestaurants.map((restaurante) => (
               <div key={restaurante.id_restaurante} className="">
-              
+
                 <CardRestaurante imgUrl={restaurante.Foto[0].imagem} avaliacao={restaurante.mediaNotas} nome={restaurante.nome} id={restaurante.id_restaurante} />
               </div>
             ))}
@@ -27,19 +28,16 @@ export default async function Home() {
         </div>
       </div>
       <div className="container">
+        <div id="sobre" className='d-flex align-items-center justify-content-center w-full p-5'>
+          <h1 className='font-bold text-3xl'>Sobre</h1>
+        </div>
         <div className="faixa bg-green-200 text-white text-center p-5">
-          <h2 className="mb-4">Quem Somos</h2>
-          <p className="">
-            Buscamos trazer um cardápio com as melhores opções para uma boa refeição na nossa cidade
-          </p>
-          <p className="">
-            Nosso objetivo é conectar os amantes da boa comida com os melhores restaurantes da região!
-          </p>
+          <FaixaInfo />
         </div>
       </div>
       <div>
         <div className='container'>
-          <div className='d-flex align-items-center justify-content-center w-full p-5'>
+          <div id="destaque" className='d-flex align-items-center justify-content-center w-full p-5'>
             <h1 className='font-bold text-3xl'>Restaurantes em Destaque</h1>
           </div>
           <div className="row justify-content-center align-items-center">
