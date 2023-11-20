@@ -104,11 +104,11 @@ async function testGetRecommendedRestaurants() {
   }
 }
 
-//testGetRestaurantById();
+testGetRestaurantById(1);
 //testGetAllRestaurants();
 //testGetAllUsers();
 //testGetAllCategories();
 //testGetRestaurantByCategory();
 //testsearchRestaurantsByName();
 //testGetTopRatedRestaurants()
-testGetRecommendedRestaurants()
+//testGetRecommendedRestaurants()
