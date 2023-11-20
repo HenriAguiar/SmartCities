@@ -7,12 +7,36 @@
     padding-bottom: 0rem;
 }
 
-.posicao-navbar{
+.posicao-navbar {
     width: 100%;
     padding-bottom: 0rem;
     padding-top: 0rem;
-}
-
+    background-image: url('/images/background-home.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
 .link{
     color: black;
 }
+
+.login-button {
+    background-color: #39DB4A;
+    color: rgb(0, 0, 0);
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .login-button:hover {
+    background-color: #2EAC3A
+  }
+  
+  .login-button svg {
+    margin-right: 8px;
+  }
+  

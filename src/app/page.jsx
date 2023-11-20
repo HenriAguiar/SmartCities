@@ -35,10 +35,6 @@ export default function Home() {
   },[])
   return (
 <div>
-  <div className='flex items-center justify-center w-full'>
-    <img src='/images/background-home.png' alt='Descrição da imagem' className='w-full' />
-  </div>
-
   <div className='container'>
     <div className='flex items-center justify-center w-full py-10'>
       <h1 className='font-bold text-3xl'>Recomendados</h1>
