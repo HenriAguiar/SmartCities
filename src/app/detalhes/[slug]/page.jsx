@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { getRestaurantById } from "@/lib/services/service"
 import ComentarioPaginaDetalhe from './comentarios'
+import { BsClock } from 'react-icons/bs';
+import { BiAccessibility } from 'react-icons/bi';
+
 
 
 const HorariosFuncionamento = ({ horarios }) => {
@@ -9,7 +12,7 @@ const HorariosFuncionamento = ({ horarios }) => {
 
   return (
     <div className="horarios-funcionamento">
-      <h2>Horários de Funcionamento</h2>
+      <h2>Horários de Funcionamento <BsClock style={{ marginRight: '8px' }} /> </h2>
       <table className="table table-sm">
         <thead>
           <tr>
@@ -21,7 +24,9 @@ const HorariosFuncionamento = ({ horarios }) => {
           {horariosArray.map(([dia, horario]) => (
             <tr key={dia}>
               <td>{dia}</td>
-              <td>{horario}</td>
+              <td>
+                <BsClock style={{ marginRight: '5px' }} /> {horario}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -36,12 +41,13 @@ const Acessibilidades = ({ acessibilidade }) => {
   return (
     <div className="container p-5">
       <div className="acessibilidades">
-        <h2>Acessibilidades</h2>
+        <h2>Acessibilidades <BiAccessibility style={{ marginRight: '8px' }} /> </h2>
         <div className="row">
           {acessibilidadeArray.map(([item, descricao], index) => (
             <div key={index} className="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
               <div className="card" style={{ width: '100%' }}>
                 <div className="card-body">
+                  <BiAccessibility style={{ marginRight: '5px' }} />
                   <p className="card-text">{descricao}</p>
                 </div>
               </div>
@@ -53,7 +59,6 @@ const Acessibilidades = ({ acessibilidade }) => {
   );
 };
 
-// No seu componente Detalhes, passe as informações de acessibilidade no formato JSON
 export default async function Detalhes({ params }) {
   const restaurantData = await getRestaurantById(params.slug);
   const tamanhoNomeRestaurante = 40;
@@ -92,7 +97,6 @@ export default async function Detalhes({ params }) {
         </div>
       </div>
 
-      {/* Passe as informações de acessibilidade no formato JSON para o componente Acessibilidades */}
       <Acessibilidades acessibilidade={restaurantData[0].acessibilidade} />
 
       <ComentarioPaginaDetalhe idRestaurante={params.slug} />

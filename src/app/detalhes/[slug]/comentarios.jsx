@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getRestaurantById } from "@/lib/services/service";
 import './stars.scss';
+import { BiChat } from 'react-icons/bi';
 
 const StarRating = ({ rating }) => {
     const stars = Array.from({ length: 5 }, (_, index) => (
@@ -64,7 +65,7 @@ export default function ComentarioPaginaDetalhe({ idRestaurante }) {
 
   return (
     <div className="comentarios-container container mt-4">
-      <h2>Comentários</h2>
+      <h2>Comentários <BiChat style={{ marginRight: '8px' }} /></h2>
 
       <ul className="list-group mt-3">
         {comentariosPaginaAtual.map((comentario, index) => (
