@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Form, FormControl, Button } from 'react-bootstrap';
-import { searchRestaurantsByName } from '@/services/service';
+import { searchRestaurantsByName } from "@/lib/services/service";
 import Image from "next/image"
 
 export default function NavBar() {
@@ -72,7 +72,7 @@ export default function NavBar() {
                     {searchResults.map((restaurante) => (
                       <li key={restaurante.id_restaurante} className="mb-3">
                         {/* Adicionando um link para a página de detalhes */}
-                        <a href={`/detalhes?id=${restaurante.id_restaurante}`}>
+                        <a href={`/detalhes/${restaurante.id_restaurante}`}>
                           <h4>{restaurante.nome}</h4>
                         </a>
                       </li>
