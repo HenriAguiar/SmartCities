@@ -1,8 +1,8 @@
 .faixa {
-    background-image: url('/images/eatsyFaixa.png');
+    background-image: url('/images/eatsy-faixa.jpg');
     background-size: cover;
     background-position: center;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 80px;
     position: relative;
   }
@@ -19,7 +19,7 @@
   
   .faixa h2,
   .faixa p {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     max-width: 400px;
     text-align: left;
