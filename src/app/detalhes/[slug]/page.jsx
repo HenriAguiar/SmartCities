@@ -36,22 +36,23 @@ export default async function Detalhes({ params }) {
 
   return (
     <>
-      <div className="container p-5 main-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <img
-          src="https://i.pinimg.com/originals/f0/98/b1/f098b1474bc51d35964b6faa032605dd.jpg"
-          className="img-fluid"
-          alt="Imagem"
-        />
-        <div className="logo-container">
-          <img
-            src={restaurantData[0].Foto[0].imagem}
-            alt="Logo"
-          />
-        </div>
-        <p className="restaurant-name" style={{ fontSize: `${tamanhoNomeRestaurante}px`, fontFamily: 'Playfair Display, serif', fontWeight: 'regular', textAlign: 'center' }}>
-          {restaurantData[0].nome}
-        </p>
-      </div>
+<div className="main-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', margin: 0 }}>
+  <img
+    src="https://i.pinimg.com/originals/f0/98/b1/f098b1474bc51d35964b6faa032605dd.jpg"
+    className="img-fluid"
+    alt="Imagem"
+    style={{ width: '100%' }}
+  />
+  <div className="logo-container">
+    <img
+      src={restaurantData[0].Foto[0].imagem}
+      alt="Logo"
+    />
+  </div>
+  <p className="restaurant-name" style={{ fontSize: `${tamanhoNomeRestaurante}px`, fontFamily: 'Playfair Display, serif', fontWeight: 'regular', textAlign: 'center' }}>
+    {restaurantData[0].nome}
+  </p>
+</div>
 
       <div className="container p-2 grid-container">
         <div className="horarios-container">
