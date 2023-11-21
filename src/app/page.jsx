@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <>
       <div>
-        <div className='container pb-5'>
+        <div className='container'>
           <div id="recomendados" className='d-flex align-items-center justify-content-center w-full p-5' >
             <h1 className='font-bold text-3xl text-center'>Recomendados</h1>
           </div>
@@ -31,7 +31,7 @@ export default async function Home() {
         <div id="sobre" className='d-flex align-items-center justify-content-center w-full p-5'>
           <h1 className='font-bold text-3xl'>Sobre</h1>
         </div>
-        <div className="faixa bg-green-200 text-white text-center p-5">
+        <div className="faixa text-white text-center p-5">
           <FaixaInfo />
         </div>
       </div>
