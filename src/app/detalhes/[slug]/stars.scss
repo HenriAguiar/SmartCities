@@ -1,0 +1,39 @@
+// styles.scss
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .custom-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .list-group-item {
+    margin-bottom: 15px; /* Adicione um espaçamento inferior aos itens da lista */
+  }
+  
+  .star-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    color: #ffd700;
+    font-size: 20px;
+    margin-right: 5px; /* Adicione um espaçamento entre as estrelas */
+  }
+  
+  .filled {
+    color: #ffd700;
+  }
+  
+  .empty {
+    color: #ddd;
+  }
