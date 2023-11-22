@@ -1,28 +1,12 @@
 "use client";
 
-import { useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { searchRestaurantsByName } from "@/lib/services/service";
 import * as Bootstrap from 'react-bootstrap';
 import { BsPersonFill } from "react-icons/bs";
 
 export default function NavBar() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = async (search) => {
-    setSearchTerm(search);
-    if (search.length > 0) {
-      const results = await searchRestaurantsByName(search);
-      if (results) {
-        setSearchResults(results);
-      }
-    } else {
-      setSearchResults([]);
-    }
-  };
 
   return (
     <>
@@ -42,35 +26,6 @@ export default function NavBar() {
               <Nav.Link className='link' href={'/#sobre'}>Sobre</Nav.Link>
               <Nav.Link className='link' href={'/#destaque'}>Destaque</Nav.Link>
             </Nav>
-            <div className="position-relative">
-              <Bootstrap.Form className="d-flex">
-                <Bootstrap.FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                  value={searchTerm}
-                  onChange={(e) => handleSearch(e.target.value)}
-                />
-              </Bootstrap.Form>
-              <div className="position-absolute start-0 mt-3" style={{ zIndex: 1000, maxHeight: '300px', overflowY: 'auto' }}>
-                <div className="search-results">
-                  {searchResults.length > 0 && (
-                    <>
-                      <ul className="list-group">
-                        {searchResults.slice(0, 10).map((restaurante) => (
-                          <li key={restaurante.id_restaurante} className="list-group-item">
-                            <a href={`/detalhes/${restaurante.id_restaurante}`} className="text-decoration-none">
-                              <p style={{ color: 'black' }}>{restaurante.nome}</p>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
             <a href={`/login`} className="Link">
               <Bootstrap.Button
                 variant="outline-light"
@@ -80,7 +35,6 @@ export default function NavBar() {
                 Login
               </Bootstrap.Button>
             </a>
-
           </Navbar.Collapse>
         </Container>
       </Navbar>
