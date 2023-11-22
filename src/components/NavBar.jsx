@@ -4,9 +4,10 @@ import { useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Form, FormControl, Button } from 'react-bootstrap';
 import { searchRestaurantsByName } from "@/lib/services/service";
-import Image from "next/image"
+import Image from "next/image";
+import * as Bootstrap from 'react-bootstrap';
+import { BsPersonFill } from "react-icons/bs";
 
 export default function NavBar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,8 +50,8 @@ export default function NavBar() {
             </Nav>
 
             {/* Adicionando a barra de pesquisa */}
-            <Form className="d-flex">
-              <FormControl
+            <Bootstrap.Form className="d-flex">
+              <Bootstrap.FormControl
                 type="search"
                 placeholder="Search"
                 className="me-2"
@@ -58,11 +59,11 @@ export default function NavBar() {
                 value={searchTerm}
                 onChange={(e) => handleSearch(e.target.value)}
               />
-              <Button variant="outline-light" onClick={handleSearchClick}>
+              <Bootstrap.Button variant="outline-light" onClick={handleSearchClick}>
                 Search
-              </Button>
-            </Form>
-
+              </Bootstrap.Button>
+            </Bootstrap.Form>
+            
             {/* Adicionando o componente de resultados de pesquisa */}
             <div className="search-results">
               {searchResults.length > 0 && (
@@ -81,6 +82,10 @@ export default function NavBar() {
                 </>
               )}
             </div>
+            <Bootstrap.Button variant="outline-light" className="ms-auto">
+              <BsPersonFill className="me-1" />
+              Login
+            </Bootstrap.Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
