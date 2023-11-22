@@ -14,7 +14,6 @@ export default function NavBar() {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchClick = async () => {
-    // Redirecionar para a página /detalhes com base no termo de pesquisa
     window.location.href = `/detalhes?search=${searchTerm}`;
   };
 
@@ -48,8 +47,6 @@ export default function NavBar() {
               <Nav.Link className='link' href={'/#sobre'}>Sobre</Nav.Link>
               <Nav.Link className='link' href={'/#destaque'}>Destaque</Nav.Link>
             </Nav>
-
-            {/* Adicionando a barra de pesquisa */}
             <Bootstrap.Form className="d-flex">
               <Bootstrap.FormControl
                 type="search"
@@ -63,8 +60,6 @@ export default function NavBar() {
                 Search
               </Bootstrap.Button>
             </Bootstrap.Form>
-            
-            {/* Adicionando o componente de resultados de pesquisa */}
             <div className="search-results">
               {searchResults.length > 0 && (
                 <>
@@ -72,7 +67,6 @@ export default function NavBar() {
                   <ul className="list-unstyled">
                     {searchResults.map((restaurante) => (
                       <li key={restaurante.id_restaurante} className="mb-3">
-                        {/* Adicionando um link para a página de detalhes */}
                         <a href={`/detalhes/${restaurante.id_restaurante}`}>
                           <h4>{restaurante.nome}</h4>
                         </a>
@@ -82,9 +76,12 @@ export default function NavBar() {
                 </>
               )}
             </div>
-            <Bootstrap.Button variant="outline-light" className="ms-auto">
+            <Bootstrap.Button
+              variant="outline-light"
+              className="ms-auto login-button"
+            >
               <BsPersonFill className="me-1" />
-              Login
+                Login
             </Bootstrap.Button>
           </Navbar.Collapse>
         </Container>
