@@ -61,7 +61,7 @@ export default function NavBar() {
                         {searchResults.slice(0, 10).map((restaurante) => (
                           <li key={restaurante.id_restaurante} className="list-group-item">
                             <a href={`/detalhes/${restaurante.id_restaurante}`} className="text-decoration-none">
-                              <p style={{color: 'black'}}>{restaurante.nome}</p>
+                              <p style={{ color: 'black' }}>{restaurante.nome}</p>
                             </a>
                           </li>
                         ))}
@@ -71,13 +71,16 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-            <Bootstrap.Button
-              variant="outline-light"
-              className="ms-auto login-button"
-            >
-              <BsPersonFill className="me-1" />
+            <a href={`/login`} className="Link">
+              <Bootstrap.Button
+                variant="outline-light"
+                className="ms-auto login-button"
+              >
+                <BsPersonFill className="me-1" />
                 Login
-            </Bootstrap.Button>
+              </Bootstrap.Button>
+            </a>
+
           </Navbar.Collapse>
         </Container>
       </Navbar>
