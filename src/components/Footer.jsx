@@ -1,4 +1,6 @@
+'use client'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Animacao from './animacao';
 
 export default function Rodape() {
     return (
@@ -94,6 +96,9 @@ export default function Rodape() {
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div className="col-lg-3 md-12">
+                        <Animacao/>
                     </div>
                 </div>
             </div>
