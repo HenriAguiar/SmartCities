@@ -10,7 +10,7 @@ export default function CardCategoria({ imgUrl, nome, id }) {
                         <div className="rounded-circle card-categoria d-flex align-items-center justify-content-center">
                                 <img src={imgUrl} className="imagem"></img>
                         </div>
-                            <p className="text-center pt-4">{nome}</p>
+                            <p className="text-center pt-4" style={{color: 'black'}}>{nome}</p>
                     </a>
                 </div>
             </div>
