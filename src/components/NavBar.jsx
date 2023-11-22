@@ -71,9 +71,12 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-            <Bootstrap.Button variant="outline-light" className="ms-auto">
+            <Bootstrap.Button
+              variant="outline-light"
+              className="ms-auto login-button"
+            >
               <BsPersonFill className="me-1" />
-              Login
+                Login
             </Bootstrap.Button>
           </Navbar.Collapse>
         </Container>
