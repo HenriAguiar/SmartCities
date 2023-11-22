@@ -38,14 +38,37 @@ const HorariosFuncionamento = ({ horarios }) => {
 const Acessibilidades = ({ acessibilidade }) => {
   const acessibilidadeArray = Object.entries(acessibilidade);
 
+  const coresPastel = ['#B2DFDB', '#FFCCBC', '#FFD180', '#C5E1A5', '#FFAB91', '#80CBC4'];
+
+  // Largura fixa das caixas em percentagem
+  const larguraFixa = '18%'; // Ajuste conforme necessário
+  const margemFixa = '2%'; // Ajuste conforme necessário
+
   return (
-    <div className="container p-5">
+    <div className="container p-5" style={{ color: 'white' }}>
       <div className="acessibilidades">
-        <h2>Acessibilidades <BiAccessibility style={{ marginRight: '8px' }} /> </h2>
+        <h2>
+          <span style={{ color: 'black' }}>Acessibilidades</span>{' '}
+          <BiAccessibility style={{ marginRight: '8px', color: 'black' }} />
+        </h2>
         <div className="row">
           {acessibilidadeArray.map(([item, descricao], index) => (
-            <div key={index} className="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
-              <div className="card" style={{ width: '100%' }}>
+            <div
+              key={index}
+              className={`col-lg-2 col-md-3 col-sm-4 col-6 mb-3`}
+              style={{
+                color: 'black',
+                width: larguraFixa,
+                marginRight: index % 5 === 4 ? '0' : margemFixa, // Remova a margem à direita para a última caixa na linha
+              }}
+            >
+              <div
+                className="card"
+                style={{
+                  backgroundColor: coresPastel[index % coresPastel.length],
+                  height: '100%', // Garante que a altura da caixa seja 100% da altura do contêiner
+                }}
+              >
                 <div className="card-body">
                   <BiAccessibility style={{ marginRight: '5px' }} />
                   <p className="card-text">{descricao}</p>
@@ -58,6 +81,7 @@ const Acessibilidades = ({ acessibilidade }) => {
     </div>
   );
 };
+
 
 export default async function Detalhes({ params }) {
   const restaurantData = await getRestaurantById(params.slug);
@@ -96,7 +120,7 @@ export default async function Detalhes({ params }) {
           ></iframe>
         </div>
       </div>
-
+      
       <Acessibilidades acessibilidade={restaurantData[0].acessibilidade} />
 
       <ComentarioPaginaDetalhe idRestaurante={params.slug} />
