@@ -1,5 +1,6 @@
-
 import CardRestaurante from "@/components/CardRestaurante"
+import Carrosel from "@/components/Carousel"
+
 import FaixaInfo from "@/components/FaixaInfo";
 import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/lib/services/service"
 
@@ -12,7 +13,9 @@ export default async function Home() {
   return (
     <>
       <div>
-        <div className='container pb-5'>
+      <Carrosel/>
+
+        <div className='container p-5'>
           <div id="recomendados" className='d-flex align-items-center justify-content-center w-full p-5' >
             <h1 className='font-bold text-3xl text-center'>Recomendados</h1>
           </div>
