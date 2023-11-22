@@ -1,18 +1,26 @@
-
 import CardRestaurante from "@/components/CardRestaurante"
+import Carrosel from "@/components/Carousel"
+
 import FaixaInfo from "@/components/FaixaInfo";
-import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/lib/services/service"
+import { getAllCategories, getRecommendedRestaurants, getTopRatedRestaurants } from "@/lib/services/service"
 
 export default async function Home() {
 
   const recommendedRestaurants = await getRecommendedRestaurants();
   const topRatedRestaurants = await getTopRatedRestaurants();
+  const categorias = await getAllCategories();
   console.log()
   recommendedRestaurants.map((restaurante) => (console.log(restaurante.id_restaurante)))
   return (
     <>
       <div>
-        <div className='container'>
+
+        <div className="container p-5">
+          <h1 className='font-bold text-3xl text-center'>Categorias</h1>
+        </div>
+        <Carrosel categorias={categorias}/>
+
+        <div className='container p-5'>
           <div id="recomendados" className='d-flex align-items-center justify-content-center w-full p-5' >
             <h1 className='font-bold text-3xl text-center'>Recomendados</h1>
           </div>

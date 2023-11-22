@@ -1,0 +1,42 @@
+.card-categoria {
+  height: 10rem;
+  width: 10rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #000;
+  opacity: 1;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+  border-radius: 0.2rem;
+
+}
+
+
+.interno {
+  height: auto;
+  width: 70rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  overflow: hidden;
+}
+
+.externo {
+  overflow: hidden;
+}
+
+
