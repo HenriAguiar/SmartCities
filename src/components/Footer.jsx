@@ -8,72 +8,72 @@ export default function Rodape() {
             <div className="rodape">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-lg-3 md-12">
+                        <div className="col-lg-4 md-12">
                             <ul className="list-unstyled">
                                 <li>
-                                    <div className="d-flex align-items-start justify-content-start">
+                                    <div className="d-flex align-items-center justify-content-center">
                                         <h4 className="tituloRodape">Links úteis</h4>
                                     </div>
                                 </li>
                                 <li>
-                                    <a className="linkSemDecoracao" href="/">
+                                    <a className="linkSemDecoracao d-flex align-items-center justify-content-center" href="/">
                                         Home
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a className="linkSemDecoracao" href="/#recomendados">
+                                    <a className="linkSemDecoracao d-flex align-items-center justify-content-center" href="/#recomendados">
                                         Recomendados
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a className="linkSemDecoracao" href="/#sobre">
+                                    <a className="linkSemDecoracao d-flex align-items-center justify-content-center" href="/#sobre">
                                         Sobre
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a className="linkSemDecoracao" href="/#destaque">
+                                    <a className="linkSemDecoracao d-flex align-items-center justify-content-center" href="/#destaque">
                                         Destaque
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 md-12">
+                        <div className="col-lg-4 md-12">
                             <ul className="list-unstyled">
                                 <li>
-                                    <div className="d-flex align-items-start justify-content-start">
+                                    <div className="d-flex align-items-center justify-content-center">
                                         <h4 className="tituloRodape RedeSocial">Redes Sociais</h4>
                                     </div>
                                 </li>
                                 <li>
                                     <a
-                                        className="linkSemDecoracao"
+                                        className="linkSemDecoracao d-flex align-items-center justify-content-center"
                                         href="https://www.instagram.com/helyezer_teofilo/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
                                     >
-                                        <i className="bi bi-instagram fs-4"></i> Product Owner
+                                        <i className="bi bi-instagram fs-4 me-1"></i> Product Owner
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        className="linkSemDecoracao"
+                                        className="linkSemDecoracao d-flex align-items-center justify-content-center"
                                         href="https://www.instagram.com/henri.aguiar/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
                                     >
-                                        <i className="bi bi-instagram fs-4"></i> Desenvolvedor Web
+                                        <i className="bi bi-instagram fs-4 me-1"></i> Desenvolvedor Web
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        className="linkSemDecoracao"
+                                        className="linkSemDecoracao d-flex align-items-center justify-content-center"
                                         href="https://www.instagram.com/joaovictordss.png/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
                                     >
-                                        <i className="bi bi-instagram fs-4"></i> Design Manager
+                                        <i className="bi bi-instagram fs-4 me-1"></i> Design Manager
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-lg-6 md-12">
+                        <div className="col-lg-4 md-12">
                             <ul className="list-unstyled">
                                 <li>
                                     <div className="colLogo d-flex flex-column">
@@ -97,8 +97,14 @@ export default function Rodape() {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-3 md-12">
-                        <Animacao/>
+                </div>
+            </div>
+            <div className="container text-center">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="colAnimacao d-flex">
+                            <Animacao />
+                        </div>
                     </div>
                 </div>
             </div>
