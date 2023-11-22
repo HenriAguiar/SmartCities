@@ -1,19 +1,16 @@
 
-export default function CardCategoria({ imgUrl, nome, avaliacao, id }) {
+export default function CardCategoria({ imgUrl, nome, id }) {
     console.log("o id dentro do card é")
-    console.log(id)
+    console.log(imgUrl)
     return (
         <>
-            <div className="col ">
+            <div className="col d-flex flex-column align-items-center justify-items-center">
                 <div className="d-flex align-items-center justify-items-center">
                     <a href={`/detalhes/${id}`} className="Link">
                         <div className="rounded-circle card-categoria d-flex align-items-center justify-content-center">
-                            <div className="d-flex align-items-center justify-content-center">
-                                <img src='/images/imagemRestaurante.png' className="logo-container" style={{ height: 120, width: 120 }}></img>
-
-                            </div>
+                                <img src={imgUrl} className="imagem"></img>
                         </div>
-                            <p className="text-center pt-4">categoria</p>
+                            <p className="text-center pt-4">{nome}</p>
                     </a>
                 </div>
             </div>
