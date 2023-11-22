@@ -7,13 +7,15 @@ const Carousel = ({categorias}) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
-      const myCarousel = new window.bootstrap.Carousel(carouselRef.current, {
+    import('bootstrap/dist/js/bootstrap.bundle.min.js').then((bootstrap) => {
+      console.log('Bootstrap carregado com sucesso!');
+      const myCarousel = new bootstrap.Carousel(carouselRef.current, {
         interval: 2000,
         wrap: true,
       });
     });
   }, []);
+  
 
   return (
     <div className='container d-flex align-items-center justify-content-center'>
