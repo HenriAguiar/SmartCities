@@ -40,9 +40,8 @@ const Acessibilidades = ({ acessibilidade }) => {
 
   const coresPastel = ['#B2DFDB', '#FFCCBC', '#FFD180', '#C5E1A5', '#FFAB91', '#80CBC4'];
 
-  // Largura fixa das caixas em percentagem
-  const larguraFixa = '18%'; // Ajuste conforme necessário
-  const margemFixa = '2%'; // Ajuste conforme necessário
+  const larguraFixa = '18%';
+  const margemFixa = '2%';
 
   return (
     <div className="container p-5" style={{ color: 'white' }}>
@@ -59,14 +58,14 @@ const Acessibilidades = ({ acessibilidade }) => {
               style={{
                 color: 'black',
                 width: larguraFixa,
-                marginRight: index % 5 === 4 ? '0' : margemFixa, // Remova a margem à direita para a última caixa na linha
+                marginRight: index % 5 === 4 ? '0' : margemFixa,
               }}
             >
               <div
                 className="card"
                 style={{
                   backgroundColor: coresPastel[index % coresPastel.length],
-                  height: '100%', // Garante que a altura da caixa seja 100% da altura do contêiner
+                  height: '100%',
                 }}
               >
                 <div className="card-body">
@@ -85,13 +84,13 @@ const Acessibilidades = ({ acessibilidade }) => {
 
 export default async function Detalhes({ params }) {
   const restaurantData = await getRestaurantById(params.slug);
-  const tamanhoNomeRestaurante = 40;
+  const tamanhoNomeRestaurante = 80;
 
   return (
     <>
       <div className="main-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', margin: 0 }}>
         <img
-          src="https://i.pinimg.com/originals/f0/98/b1/f098b1474bc51d35964b6faa032605dd.jpg"
+          src="/images/background-navbar.png"
           className="img-fluid"
           alt="Imagem"
           style={{ width: '100%' }}

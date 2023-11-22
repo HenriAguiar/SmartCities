@@ -8,16 +8,17 @@
   }
   
   .posicao-navbar {
+    position: absolute;
     width: 100%;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
-    background-image: url('/images/background-navbar.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
   }
   
   .link,
