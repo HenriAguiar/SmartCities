@@ -5,18 +5,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { searchRestaurantsByName } from "@/lib/services/service";
-import Image from "next/image";
 import * as Bootstrap from 'react-bootstrap';
 import { BsPersonFill } from "react-icons/bs";
 
 export default function NavBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearchClick = async () => {
-    // Redirecionar para a página /detalhes com base no termo de pesquisa
-    window.location.href = `/detalhes?search=${searchTerm}`;
-  };
 
   const handleSearch = async (search) => {
     setSearchTerm(search);
@@ -48,39 +42,34 @@ export default function NavBar() {
               <Nav.Link className='link' href={'/#sobre'}>Sobre</Nav.Link>
               <Nav.Link className='link' href={'/#destaque'}>Destaque</Nav.Link>
             </Nav>
-
-            {/* Adicionando a barra de pesquisa */}
-            <Bootstrap.Form className="d-flex">
-              <Bootstrap.FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                value={searchTerm}
-                onChange={(e) => handleSearch(e.target.value)}
-              />
-              <Bootstrap.Button variant="outline-light" onClick={handleSearchClick}>
-                Search
-              </Bootstrap.Button>
-            </Bootstrap.Form>
-            
-            {/* Adicionando o componente de resultados de pesquisa */}
-            <div className="search-results">
-              {searchResults.length > 0 && (
-                <>
-                  <h3>Search Results:</h3>
-                  <ul className="list-unstyled">
-                    {searchResults.map((restaurante) => (
-                      <li key={restaurante.id_restaurante} className="mb-3">
-                        {/* Adicionando um link para a página de detalhes */}
-                        <a href={`/detalhes/${restaurante.id_restaurante}`}>
-                          <h4>{restaurante.nome}</h4>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
+            <div className="position-relative">
+              <Bootstrap.Form className="d-flex">
+                <Bootstrap.FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                  value={searchTerm}
+                  onChange={(e) => handleSearch(e.target.value)}
+                />
+              </Bootstrap.Form>
+              <div className="position-absolute start-0 mt-3" style={{ zIndex: 1000, maxHeight: '300px', overflowY: 'auto' }}>
+                <div className="search-results">
+                  {searchResults.length > 0 && (
+                    <>
+                      <ul className="list-group">
+                        {searchResults.slice(0, 10).map((restaurante) => (
+                          <li key={restaurante.id_restaurante} className="list-group-item">
+                            <a href={`/detalhes/${restaurante.id_restaurante}`} className="text-decoration-none">
+                              <p style={{color: 'black'}}>{restaurante.nome}</p>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
             <Bootstrap.Button variant="outline-light" className="ms-auto">
               <BsPersonFill className="me-1" />
