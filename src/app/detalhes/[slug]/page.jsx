@@ -84,13 +84,13 @@ const Acessibilidades = ({ acessibilidade }) => {
 
 export default async function Detalhes({ params }) {
   const restaurantData = await getRestaurantById(params.slug);
-  const tamanhoNomeRestaurante = 80;
+  const tamanhoNomeRestaurante = 60;
 
   return (
     <>
       <div className="main-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', margin: 0 }}>
         <img
-          src="/images/background-navbar.png"
+          src="/images/fundo-verde.jpg"
           className="img-fluid"
           alt="Imagem"
           style={{ width: '100%' }}
