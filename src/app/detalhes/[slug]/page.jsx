@@ -91,7 +91,7 @@ export default async function Detalhes({ params }) {
     <>
       <div className="main-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', margin: 0 }}>
         <img
-          src="https://i.pinimg.com/originals/f0/98/b1/f098b1474bc51d35964b6faa032605dd.jpg"
+          src="/images/background-navbar.png"
           className="img-fluid"
           alt="Imagem"
           style={{ width: '100%' }}

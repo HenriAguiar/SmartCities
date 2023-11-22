@@ -1,16 +1,16 @@
-
 import CardRestaurante from "@/components/CardRestaurante"
 import FaixaInfo from "@/components/FaixaInfo";
 import { getRecommendedRestaurants, getTopRatedRestaurants } from "@/lib/services/service"
+import Banner from '@/components/banner';
 
 export default async function Home() {
 
   const recommendedRestaurants = await getRecommendedRestaurants();
   const topRatedRestaurants = await getTopRatedRestaurants();
-  console.log()
-  recommendedRestaurants.map((restaurante) => (console.log(restaurante.id_restaurante)))
+
   return (
     <>
+      <Banner/>
       <div>
         <div className='container'>
           <div id="recomendados" className='d-flex align-items-center justify-content-center w-full p-5' >
