@@ -6,7 +6,7 @@ export default function CardCategoria({ imgUrl, nome, id }) {
         <>
             <div className="col d-flex flex-column align-items-center justify-items-center">
                 <div className="d-flex align-items-center justify-items-center">
-                    <a href={`/detalhes/${id}`} className="Link">
+                    <a href={`/restaurantes/${id}`} className="Link">
                         <div className="rounded-circle card-categoria d-flex align-items-center justify-content-center">
                                 <img src={imgUrl} className="imagem"></img>
                         </div>
